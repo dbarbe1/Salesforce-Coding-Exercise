@@ -1,0 +1,43 @@
+<apex:component allowDML="true" controller="SampleProject">
+  <apex:outputPanel id="output">
+      <apex:form >
+          <apex:input value="{!input}" id="addToList" disabled="{!inputlist.size>9}" >
+          </apex:input>  
+          <apex:commandButton action="{!setinputlist}" value="Add Request"/>
+      </apex:form>
+
+      
+      <apex:dataTable value="{!Inputlist}" var="inputlistobj" id="theTable"
+        rowClasses="odd,even" styleClass="tableClass" cellPadding="4" border="1">
+
+        <apex:column >
+            <apex:facet name="header">Numeric Value</apex:facet>
+            <apex:outputText value="{!inputlistobj.numeric_value_display__c}"/>
+        </apex:column>
+        
+        <apex:column >
+            <apex:facet name="header">Search Request</apex:facet>
+            <apex:outputText value="{!inputlistobj.request__c}"/>
+        </apex:column>
+        
+        <apex:column >
+            <apex:facet name="header">Hashed Request</apex:facet>
+            <apex:outputText value="{!inputlistobj.hashed_request__c}"/>
+        </apex:column>
+        
+        <apex:column >
+            <apex:facet name="header">Upper Fibonacci</apex:facet>
+            <apex:outputText value="{!inputlistobj.upper_fibonacci__c}"/>
+        </apex:column>
+        
+        <apex:column >
+            <apex:facet name="header">Lower Fibonacci</apex:facet>
+            <apex:outputText value="{!inputlistobj.lower_fibonacci__c}"/>
+        </apex:column>
+    </apex:dataTable>
+  </apex:outputPanel>
+  <apex:form ><apex:actionPoller action="{!checkBatch}" reRender="theTable" interval="5"/></apex:form>
+  <apex:form ><apex:commandButton action="{!createRecords}" value="Submit" id="Submit"/></apex:form>
+  <br></br>
+  <apex:form ><apex:commandButton action="{!batchFibonacci}" value="Batch Fibonacci" id="Batch" rendered="{!isBatchable}"/></apex:form>
+</apex:component>
