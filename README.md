@@ -1,6 +1,7 @@
 # Salesforce-Coding-Exercise
 
-#Brief
+# Brief
+
 1. Create a custom page component
 2. The component should initially contain one empty input box
 3. When the user enters a value in the input box and hits the "enter" key, the input should become readonly and a new line with another input should be created
@@ -12,7 +13,8 @@
 9. When the results for this batch are ready, a button should appear called "Batch Fibonacci" that, when clicked, will call a batch job for all of these objects and find the closest fibonacci numbers above and below the numeric values for each object
 10. When the batch is complete, the values should show on the page
 
-#Deployment Notes
+# Deployment Notes
+
 Requires creation of custom object sampleobject
 Fields:
 request__c : Text
