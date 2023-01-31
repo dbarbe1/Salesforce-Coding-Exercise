@@ -16,9 +16,9 @@
 # Deployment Notes
 
 Requires creation of custom object sampleobject
-Fields:
-request__c : Text
-numeric_value_display__c : Number
-hashed_request__c : Long Text
-lower_fibonacci__c : Number
-upper_fibonacci__c : Number
+- Fields:
+- request__c : Text
+- numeric_value_display__c : Number
+- hashed_request__c : Long Text
+- lower_fibonacci__c : Number
+- upper_fibonacci__c : Number
